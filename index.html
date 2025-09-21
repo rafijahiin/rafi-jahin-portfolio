@@ -10,13 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Warm Neutrals & Muted Teal -->
-    <!-- Application Structure Plan: The SPA is designed as a narrative journey. It starts with a high-impact "Key Metrics" dashboard to immediately quantify achievements. This is followed by an interactive tabbed "Experience" section, allowing users to explore specific roles without being overwhelmed. A visual "Skills" section with a chart provides a quick, digestible overview of technical capabilities, and a "Career Timeline" shows professional growth. A new "AI Career Assistant" section now uses the Gemini API to generate a targeted cover letter paragraph from a job description, demonstrating AI skills directly. This structure transforms a linear CV into an exploratory, user-driven, and interactive experience. -->
+    <!-- Application Structure Plan: The SPA is a narrative journey starting with a "Key Metrics" dashboard. It flows into an "AI Career Assistant" powered by the Gemini API, an interactive "Experience" section, and a new "Publications & Media" section to showcase tangible work. It concludes with a "Skills" chart and "Career Timeline". This structure provides a comprehensive, interactive, and evidence-based view of the candidate's profile. -->
     <!-- Visualization & Content Choices: 
         - Key Metrics (From CV achievements): Goal: Inform/Impress -> Method: Large number cards -> Interaction: Hover effects -> Justification: Highlights quantifiable impact upfront.
         - Experience (CV work history): Goal: Organize/Inform -> Method: JS-powered Tabs -> Interaction: Click to reveal role details -> Justification: Prevents a wall of text and improves navigation.
+        - Publications & Media (From user's website): Goal: Provide Evidence -> Method: Grid of linked cards -> Interaction: Click to read external articles -> Justification: Offers concrete proof of expertise and public engagement.
         - Technical Skills (From CV skills list): Goal: Compare/Inform -> Method: Chart.js Radar Chart -> Interaction: Hover tooltips -> Justification: Visually represents multi-faceted expertise.
         - Career Path (From CV roles/dates): Goal: Show Change -> Method: HTML/CSS Timeline -> Interaction: None, purely visual -> Justification: Provides a clear, chronological story.
-        - AI Cover Letter Helper: Goal: Demonstrate/Synthesize -> Method: Gemini API Call -> Interaction: User input (job description) -> Justification: Showcases practical AI application and directly assists the target audience (recruiters).
+        - AI Cover Letter Helper: Goal: Demonstrate/Synthesize -> Method: Gemini API Call -> Interaction: User input (job description) -> Justification: Showcases practical AI application.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
@@ -43,6 +44,13 @@
             .chart-container {
                 height: 400px;
             }
+        }
+        .publication-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
         }
     </style>
 </head>
@@ -148,6 +156,31 @@
                 </div>
             </div>
         </section>
+
+        <section id="publications" class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Publications & Media</h2>
+                <p class="mt-2 text-gray-600">My work and insights featured in various publications.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Can AI be a game-changer for Bangladesh's development story?</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">An op-ed on the potential of artificial intelligence to accelerate development in Bangladesh, focusing on practical applications and ethical considerations.</p>
+                    <a href="https://www.dhakatribune.com/opinion/op-ed/334207/can-ai-be-a-game-changer-for-bangladesh-s" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                </div>
+                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">From the Margins to the Mainstream</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">A personal narrative on navigating gender transition in Bangladesh and the role of technology in fostering inclusion and creating opportunities.</p>
+                    <a href="https://www.thedailystar.net/shout/news/the-margins-the-mainstream-3183531" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                </div>
+                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Youth-led Digital Solution to Fight COVID-19 in Bangladesh</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">Details a project where a youth-led team developed a digital platform to provide reliable information and resources during the COVID-19 pandemic.</p>
+                    <a href="https://www.swisscontact.org/en/news/youth-led-digital-solution-to-fight-covid-19-in-bangladesh" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                </div>
+            </div>
+        </section>
+
 
         <section id="skills" class="mb-16">
             <div class="text-center mb-8">
