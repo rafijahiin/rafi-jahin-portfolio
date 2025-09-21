@@ -339,7 +339,7 @@
                     copySnippetBtn.classList.remove('hidden');
                 } catch (error) {
                     generatedTextP.textContent = 'Sorry, an error occurred while generating the text. Please try again.';
-                    console.error('Gemini API call failed:', error);
+                    console.error('Gemini API call failed:', error.message);
                 } finally {
                     generateSnippetBtn.disabled = false;
                     generateSnippetBtn.innerHTML = 'Generate Cover Letter Snippet ✨';
@@ -368,6 +368,12 @@
                     systemInstruction: {
                         parts: [{ text: systemPrompt }]
                     },
+                    safetySettings: [
+                        { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
+                        { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
+                        { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
+                        { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" },
+                    ],
                 };
 
                 for (let i = 0; i < retries; i++) {
@@ -379,19 +385,35 @@
                         });
 
                         if (!response.ok) {
+                            const errorBody = await response.text();
+                            console.error(`HTTP error! status: ${response.status}`, errorBody);
                             throw new Error(`HTTP error! status: ${response.status}`);
                         }
 
                         const result = await response.json();
-                        const candidate = result.candidates?.[0];
-
-                        if (candidate && candidate.content?.parts?.[0]?.text) {
-                            return candidate.content.parts[0].text;
+                        
+                        if (result.candidates && result.candidates.length > 0) {
+                            const candidate = result.candidates[0];
+                            if (candidate.content && candidate.content.parts && candidate.content.parts.length > 0 && candidate.content.parts[0].text) {
+                                return candidate.content.parts[0].text;
+                            } else {
+                                console.error('API response candidate missing content.', candidate);
+                                throw new Error(`API returned a candidate with no text content. Finish reason: ${candidate.finishReason || 'N/A'}`);
+                            }
                         } else {
-                            throw new Error('Invalid response structure from API');
+                            console.error('API response contained no candidates.', result);
+                            let errorMessage = 'The model did not generate a response.';
+                            if (result.promptFeedback && result.promptFeedback.blockReason) {
+                                errorMessage += ` Reason: ${result.promptFeedback.blockReason}`;
+                            }
+                             throw new Error(errorMessage);
                         }
+
                     } catch (error) {
-                        if (i === retries - 1) throw error;
+                        console.error(`API call attempt ${i + 1} failed.`, error);
+                        if (i === retries - 1) {
+                           throw error; 
+                        }
                         await new Promise(res => setTimeout(res, delay * Math.pow(2, i)));
                     }
                 }
