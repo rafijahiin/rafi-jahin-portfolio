@@ -9,26 +9,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Warm Neutrals & Muted Teal -->
-    <!-- Application Structure Plan: The SPA is a narrative journey starting with a "Key Metrics" dashboard. It flows into an "AI Career Assistant" powered by the Gemini API, an interactive "Experience" section, and an expanded "Publications & Media" section. It concludes with a "Skills" chart and "Career Timeline". This structure provides a comprehensive, interactive, and evidence-based view of the candidate's profile. -->
+    <!-- Chosen Palette: Ocean & Coral -->
+    <!-- Application Structure Plan: The SPA is a narrative journey starting with a "Key Metrics" dashboard. It flows into a new "My Approach" section, an interactive "Experience" section, and an expanded "Publications & Media" section. It concludes with a "Skills" chart and "Career Timeline". This structure provides a comprehensive, interactive, and evidence-based view of the candidate's profile, replacing the non-functional AI assistant with a more personal statement of professional philosophy. The new color scheme adds vibrancy. -->
     <!-- Visualization & Content Choices: 
+        - My Approach (New Section): Goal: Inform/Connect -> Method: Iconography with text -> Interaction: None -> Justification: Replaces the AI tool with a personal mission statement, adding depth to the portfolio.
         - Key Metrics (From CV achievements): Goal: Inform/Impress -> Method: Large number cards -> Interaction: Hover effects -> Justification: Highlights quantifiable impact upfront.
         - Experience (CV work history): Goal: Organize/Inform -> Method: JS-powered Tabs -> Interaction: Click to reveal role details -> Justification: Prevents a wall of text and improves navigation.
         - Publications & Media (From user's website): Goal: Provide Evidence -> Method: Grid of linked cards -> Interaction: Click to read external articles -> Justification: Offers concrete proof of expertise and public engagement.
         - Technical Skills (From CV skills list): Goal: Compare/Inform -> Method: Chart.js Radar Chart -> Interaction: Hover tooltips -> Justification: Visually represents multi-faceted expertise.
         - Career Path (From CV roles/dates): Goal: Show Change -> Method: HTML/CSS Timeline -> Interaction: None, purely visual -> Justification: Provides a clear, chronological story.
-        - AI Cover Letter Helper: Goal: Demonstrate/Synthesize -> Method: Gemini API Call -> Interaction: User input (job description) -> Justification: Showcases practical AI application.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FDFBF8;
-            color: #383838;
+            background-color: #FFFBF5;
+            color: #3A506B;
         }
         .tab-active {
-            border-color: #4A908A;
-            color: #4A908A;
+            border-color: #FF6B6B;
+            color: #FF6B6B;
             font-weight: 600;
         }
         .chart-container {
@@ -47,10 +47,11 @@
         }
         .publication-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
         }
         .publication-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -2px rgba(0,0,0,0.04);
         }
     </style>
 </head>
@@ -59,62 +60,68 @@
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <header class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Rafi Jahin</h1>
-            <p class="mt-2 text-lg md:text-xl text-gray-600">Technology & Evaluation Specialist | AI in Development</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00A896] to-[#02C39A]">Rafi Jahin</h1>
+            <p class="mt-2 text-lg md:text-xl text-[#3A506B]">Technology & Evaluation Specialist | AI in Development</p>
             <div class="mt-4 flex justify-center space-x-6 text-sm">
-                <a href="mailto:rafijahinn@gmail.com" class="text-gray-500 hover:text-[#4A908A] transition-colors">rafijahinn@gmail.com</a>
-                <a href="https://sites.google.com/view/rafi-jahin/" target="_blank" class="text-gray-500 hover:text-[#4A908A] transition-colors">Portfolio</a>
-                <a href="https://www.linkedin.com/in/rafi-jahin/" target="_blank" class="text-gray-500 hover:text-[#4A908A] transition-colors">LinkedIn</a>
+                <a href="mailto:rafijahinn@gmail.com" class="text-gray-500 hover:text-[#FF6B6B] transition-colors">rafijahinn@gmail.com</a>
+                <a href="https://sites.google.com/view/rafi-jahin/" target="_blank" class="text-gray-500 hover:text-[#FF6B6B] transition-colors">Portfolio</a>
+                <a href="https://www.linkedin.com/in/rafi-jahin/" target="_blank" class="text-gray-500 hover:text-[#FF6B6B] transition-colors">LinkedIn</a>
             </div>
         </header>
 
         <section id="metrics" class="mb-16">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800">Impact at a Glance</h2>
-                <p class="mt-2 text-gray-600">A snapshot of my professional contributions and their scale.</p>
+                <h2 class="text-3xl font-bold text-[#00A896]">Impact at a Glance</h2>
+                <p class="mt-2 text-[#3A506B]">A snapshot of my professional contributions and their scale.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                <div class="bg-white/60 p-6 rounded-lg shadow-sm">
-                    <p class="text-4xl font-bold text-[#4A908A]">185,000+</p>
-                    <p class="text-gray-600 mt-2">People with Improved Healthcare Access</p>
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#02C39A]">
+                    <p class="text-4xl font-bold text-[#3A506B]">185,000+</p>
+                    <p class="text-[#3A506B] mt-2">People with Improved Healthcare Access</p>
                 </div>
-                <div class="bg-white/60 p-6 rounded-lg shadow-sm">
-                    <p class="text-4xl font-bold text-[#4A908A]">460+</p>
-                    <p class="text-gray-600 mt-2">Documents & Interviews Processed with AI</p>
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#FF6B6B]">
+                    <p class="text-4xl font-bold text-[#3A506B]">460+</p>
+                    <p class="text-[#3A506B] mt-2">Documents & Interviews Processed with AI</p>
                 </div>
-                <div class="bg-white/60 p-6 rounded-lg shadow-sm">
-                    <p class="text-4xl font-bold text-[#4A908A]">40%</p>
-                    <p class="text-gray-600 mt-2">Reduction in Data Processing Time</p>
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#02C39A]">
+                    <p class="text-4xl font-bold text-[#3A506B]">40%</p>
+                    <p class="text-[#3A506B] mt-2">Reduction in Data Processing Time</p>
                 </div>
-                <div class="bg-white/60 p-6 rounded-lg shadow-sm">
-                    <p class="text-4xl font-bold text-[#4A908A]">1,350+</p>
-                    <p class="text-gray-600 mt-2">Paramedics Trained via E-Learning System</p>
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#FF6B6B]">
+                    <p class="text-4xl font-bold text-[#3A506B]">1,350+</p>
+                    <p class="text-[#3A506B] mt-2">Paramedics Trained via E-Learning System</p>
                 </div>
             </div>
         </section>
         
-        <section id="ai-assistant" class="mb-16 bg-white/60 p-8 rounded-lg shadow-sm">
-            <div class="text-center mb-6">
-                <h2 class="text-3xl font-bold text-gray-800">✨ AI-Powered Career Assistant</h2>
-                <p class="mt-2 text-gray-600">Paste a job description below to see how my experience aligns. This tool uses the Gemini API to generate a targeted cover letter snippet.</p>
+        <section id="my-approach" class="mb-16 bg-white p-8 rounded-lg shadow-sm">
+             <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#00A896]">My Approach</h2>
+                <p class="mt-2 max-w-2xl mx-auto text-[#3A506B]">I believe technology is a powerful lever for equity and social impact. My work is guided by a commitment to creating solutions that are not only innovative but also inclusive and sustainable.</p>
             </div>
-            <div class="max-w-3xl mx-auto">
-                <textarea id="jobDescription" class="w-full h-40 p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#4A908A] focus:border-transparent transition" placeholder="Paste the job description here..."></textarea>
-                <p id="jobDescriptionError" class="text-red-500 text-sm mt-1 hidden">Please paste a job description first.</p>
-                <button id="generateSnippetBtn" class="mt-4 w-full bg-[#4A908A] text-white font-bold py-3 px-4 rounded-md hover:bg-[#3E7A73] transition-colors disabled:bg-gray-400">
-                    Generate Cover Letter Snippet ✨
-                </button>
-                <div id="snippetResult" class="mt-6 p-4 border border-dashed border-gray-300 rounded-md bg-gray-50 min-h-[100px] hidden">
-                    <p id="generatedText" class="text-gray-700 whitespace-pre-wrap"></p>
-                    <button id="copySnippetBtn" class="hidden mt-4 bg-gray-200 text-gray-700 text-sm font-bold py-2 px-3 rounded-md hover:bg-gray-300 transition-colors">Copy to Clipboard</button>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+                <div>
+                    <div class="text-4xl mb-3">👥</div>
+                    <h3 class="text-xl font-bold text-[#3A506B] mb-2">Human-Centered by Design</h3>
+                    <p class="text-[#3A506B]">Building solutions that are intuitive, accessible, and directly address the needs of communities, especially those at the margins.</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-3">📈</div>
+                    <h3 class="text-xl font-bold text-[#3A506B] mb-2">Evidence-Driven Strategy</h3>
+                    <p class="text-[#3A506B]">Leveraging data and AI not just for efficiency, but to uncover deep insights that lead to more effective and sustainable development programs.</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-3">🤝</div>
+                    <h3 class="text-xl font-bold text-[#3A506B] mb-2">Collaborative Scaling</h3>
+                    <p class="text-[#3A506B]">Fostering strong partnerships across sectors to ensure that innovative solutions can grow from a pilot to a national standard, creating lasting change.</p>
                 </div>
             </div>
         </section>
 
         <section id="experience" class="mb-16">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800">Professional Experience</h2>
-                <p class="mt-2 text-gray-600">I leverage technology to solve complex challenges in international development. Select a role to see how.</p>
+                <h2 class="text-3xl font-bold text-[#00A896]">Professional Experience</h2>
+                <p class="mt-2 text-[#3A506B]">I leverage technology to solve complex challenges in international development. Select a role to see how.</p>
             </div>
             <div class="max-w-4xl mx-auto">
                 <div class="mb-6 border-b border-gray-200">
@@ -124,11 +131,11 @@
                         <button class="tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 hover:border-gray-300" data-tab="gain">GAIN</button>
                     </nav>
                 </div>
-                <div id="tab-content">
+                <div id="tab-content" class="bg-white p-6 rounded-lg">
                     <div class="tab-pane" id="unfpa">
-                        <h3 class="text-xl font-bold text-gray-800">National Young & Emerging Evaluator</h3>
+                        <h3 class="text-xl font-bold text-[#3A506B]">National Young & Emerging Evaluator</h3>
                         <p class="text-sm text-gray-500 mb-4">Feb 2025 – Present</p>
-                        <ul class="space-y-3 text-gray-700 list-disc list-inside">
+                        <ul class="space-y-3 text-[#3A506B] list-disc list-inside">
                             <li>Built a pioneering AI-assisted analytical workflow (NotebookLM & Gemini) to process over 300 program documents and 160 stakeholder interviews, enhancing the rigor of the 10th Country Programme Evaluation.</li>
                             <li>Authored core chapters on Findings, Conclusions, and Recommendations for the Final Evaluation Report, directly influencing strategic planning.</li>
                             <li>Produced interactive Power BI dashboards to translate complex evaluation data into actionable insights for high-level management.</li>
@@ -136,9 +143,9 @@
                         </ul>
                     </div>
                     <div class="tab-pane hidden" id="swisscontact">
-                        <h3 class="text-xl font-bold text-gray-800">Officer, Partnership & Innovation</h3>
+                        <h3 class="text-xl font-bold text-[#3A506B]">Officer, Partnership & Innovation</h3>
                         <p class="text-sm text-gray-500 mb-4">Nov 2021 – Aug 2024</p>
-                        <ul class="space-y-3 text-gray-700 list-disc list-inside">
+                        <ul class="space-y-3 text-[#3A506B] list-disc list-inside">
                             <li>Led the product lifecycle for Bangladesh’s first open-source, mobile-optimized Moodle LMS for community paramedics, designed for low-bandwidth areas to serve over 30,000 users.</li>
                             <li>Managed platform adoption across 10 institutes, onboarding 500+ students and 50+ faculty, setting a new national standard for blended learning in vocational healthcare.</li>
                             <li>Scaled the e-learning system to train over 1,350 paramedics (60% women), directly improving healthcare access for more than 185,000 people.</li>
@@ -146,9 +153,9 @@
                         </ul>
                     </div>
                     <div class="tab-pane hidden" id="gain">
-                        <h3 class="text-xl font-bold text-gray-800">Project Assistant, Innovation & Supply Chain</h3>
+                        <h3 class="text-xl font-bold text-[#3A506B]">Project Assistant, Innovation & Supply Chain</h3>
                         <p class="text-sm text-gray-500 mb-4">Aug 2024 – Feb 2025</p>
-                        <ul class="space-y-3 text-gray-700 list-disc list-inside">
+                        <ul class="space-y-3 text-[#3A506B] list-disc list-inside">
                              <li>Supported digital innovation in agricultural supply chains by implementing a blockchain-based dashboard and QR code traceability system.</li>
                              <li>Analyzed data from over 1,500 farmers to develop predictive analytics models for supply chain optimization.</li>
                              <li>Coordinated youth entrepreneurship initiatives, supporting the launch of more than 30 new small businesses in the agricultural sector.</li>
@@ -160,49 +167,49 @@
 
         <section id="publications" class="mb-16">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800">Publications & Media</h2>
-                <p class="mt-2 text-gray-600">My work and insights featured in various publications.</p>
+                <h2 class="text-3xl font-bold text-[#00A896]">Publications & Media</h2>
+                <p class="mt-2 text-[#3A506B]">My work and insights featured in various publications.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                 <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Job Fair Connects Paramedics with Employers</h3>
+                 <div class="publication-card p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-[#3A506B] mb-2 flex-grow">Job Fair Connects Paramedics with Employers</h3>
                     <p class="text-sm text-gray-600 mb-4 flex-grow">An article covering a job fair in Sylhet organized to connect trained community paramedics with potential healthcare employers.</p>
-                    <a href="https://www.swisscontact.org/en/news/job-fair-in-sylhet-connects-community-paramedics-with-employers" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                    <a href="https://www.swisscontact.org/en/news/job-fair-in-sylhet-connects-community-paramedics-with-employers" target="_blank" class="text-[#FF6B6B] font-semibold hover:underline self-start">Read More →</a>
                 </div>
-                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">e-Learning in Paramedic Education (Video)</h3>
+                <div class="publication-card p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-[#3A506B] mb-2 flex-grow">e-Learning in Paramedic Education (Video)</h3>
                     <p class="text-sm text-gray-600 mb-4 flex-grow">A video feature showcasing the impact and implementation of the e-learning platform for community paramedic training in Bangladesh.</p>
-                    <a href="https://www.youtube.com/watch?v=4ZvAVU-j8W8" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Watch Video →</a>
+                    <a href="https://www.youtube.com/watch?v=4ZvAVU-j8W8" target="_blank" class="text-[#FF6B6B] font-semibold hover:underline self-start">Watch Video →</a>
                 </div>
-                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">The Future of Training: e-Learning Platform</h3>
+                <div class="publication-card p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-[#3A506B] mb-2 flex-grow">The Future of Training: e-Learning Platform</h3>
                     <p class="text-sm text-gray-600 mb-4 flex-grow">Discusses the development of the e-learning platform for the community paramedic curriculum, highlighting its forward-looking approach.</p>
-                    <a href="https://www.swisscontact.org/en/news/into-the-future-of-training-an-e-learning-platform-for-community-paramedic-curriculum" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                    <a href="https://www.swisscontact.org/en/news/into-the-future-of-training-an-e-learning-platform-for-community-paramedic-curriculum" target="_blank" class="text-[#FF6B6B] font-semibold hover:underline self-start">Read More →</a>
                 </div>
-                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">e-Learning Platform Goes Open Source</h3>
+                <div class="publication-card p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-[#3A506B] mb-2 flex-grow">e-Learning Platform Goes Open Source</h3>
                     <p class="text-sm text-gray-600 mb-4 flex-grow">Announcing that the e-learning platform for community paramedic training has been made open-source to broaden its impact.</p>
-                    <a href="https://www.swisscontact.org/en/news/the-e-learning-platform-for-the-community-paramedic-training-is-now-open-source" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                    <a href="https://www.swisscontact.org/en/news/the-e-learning-platform-for-the-community-paramedic-training-is-now-open-source" target="_blank" class="text-[#FF6B6B] font-semibold hover:underline self-start">Read More →</a>
                 </div>
-                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Healthcare Career Fair in Rangpur (Video)</h3>
+                <div class="publication-card p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-[#3A506B] mb-2 flex-grow">Healthcare Career Fair in Rangpur (Video)</h3>
                     <p class="text-sm text-gray-600 mb-4 flex-grow">Video covering a career fair for healthcare workers in Rangpur, organized with 20 healthcare-providing organizations.</p>
-                    <a href="https://www.facebook.com/shomvobBD/videos/%E0%A7%A8%E0%A7%A6-%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A7%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%80-%E0%A6%B8%E0%A6%82%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%BE-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A7%87-%E0%A6%86%E0%A7%9F%E0%A7%8B%E0%A6%9C%E0%A6%BF%E0%A6%A4-%E0%A6%B0%E0%A6%82%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%95%E0%A6%B0%E0%A7%8D%E0%A6%AE%E0%A7%80%E0%A6%B0-%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A7%9F%E0%A6%BE%E0%A6%B0-%E0%A6%AE%E0%A7%87%E0%A6%B2%E0%A6%BE/1530961021139389/" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Watch Video →</a>
+                    <a href="https://www.facebook.com/shomvobBD/videos/%E0%A7%A8%E0%A7%A6-%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A7%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%80-%E0%A6%B8%E0%A6%82%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%BE-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A7%87-%E0%A6%86%E0%A7%9F%E0%A7%8B%E0%A6%9C%E0%A6%BF%E0%A6%A4-%E0%A6%B0%E0%A6%82%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%95%E0%A6%B0%E0%A7%8D%E0%A6%AE%E0%A7%80%E0%A6%B0-%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A7%9F%E0%A6%BE%E0%A6%B0-%E0%A6%AE%E0%A7%87%E0%A6%B2%E0%A6%BE/1530961021139389/" target="_blank" class="text-[#FF6B6B] font-semibold hover:underline self-start">Watch Video →</a>
                 </div>
-                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Paramedic Training Now Interactively Digitized</h3>
+                <div class="publication-card p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-[#3A506B] mb-2 flex-grow">Paramedic Training Now Interactively Digitized</h3>
                     <p class="text-sm text-gray-600 mb-4 flex-grow">An article on the digitization of the CP training curriculum, making it more interactive and accessible for students nationwide.</p>
-                    <a href="https://www.swisscontact.org/en/news/the-community-paramedic-cp-training-is-now-interactively-digitized" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                    <a href="https://www.swisscontact.org/en/news/the-community-paramedic-cp-training-is-now-interactively-digitized" target="_blank" class="text-[#FF6B6B] font-semibold hover:underline self-start">Read More →</a>
                 </div>
-                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Teachers Trained on Astha e-Learning Platform</h3>
+                <div class="publication-card p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-[#3A506B] mb-2 flex-grow">Teachers Trained on Astha e-Learning Platform</h3>
                     <p class="text-sm text-gray-600 mb-4 flex-grow">News about a training session for teachers to effectively use the Astha e-learning platform for their students.</p>
-                    <a href="https://www.swisscontact.org/en/news/teachers-receive-training-on-e-learning-platform-astha" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                    <a href="https://www.swisscontact.org/en/news/teachers-receive-training-on-e-learning-platform-astha" target="_blank" class="text-[#FF6B6B] font-semibold hover:underline self-start">Read More →</a>
                 </div>
-                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Astha Takes e-Learning to the Next Level</h3>
+                <div class="publication-card p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-[#3A506B] mb-2 flex-grow">Astha Takes e-Learning to the Next Level</h3>
                     <p class="text-sm text-gray-600 mb-4 flex-grow">An update on the advancements of the Astha platform, enhancing its interactive features for a better learning experience.</p>
-                    <a href="https://www.swisscontact.org/en/news/astha-takes-interactive-e-learning-to-its-next-level" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                    <a href="https://www.swisscontact.org/en/news/astha-takes-interactive-e-learning-to-its-next-level" target="_blank" class="text-[#FF6B6B] font-semibold hover:underline self-start">Read More →</a>
                 </div>
             </div>
         </section>
@@ -210,8 +217,8 @@
 
         <section id="skills" class="mb-16">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800">Core Competencies</h2>
-                <p class="mt-2 text-gray-600">A multi-faceted skill set to drive projects from concept to impact.</p>
+                <h2 class="text-3xl font-bold text-[#00A896]">Core Competencies</h2>
+                <p class="mt-2 text-[#3A506B]">A multi-faceted skill set to drive projects from concept to impact.</p>
             </div>
             <div class="chart-container">
                 <canvas id="skillsChart"></canvas>
@@ -220,41 +227,41 @@
 
         <section id="timeline">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800">Career Journey</h2>
-                <p class="mt-2 text-gray-600">My professional path in technology and development.</p>
+                <h2 class="text-3xl font-bold text-[#00A896]">Career Journey</h2>
+                <p class="mt-2 text-[#3A506B]">My professional path in technology and development.</p>
             </div>
             <div class="relative max-w-2xl mx-auto">
                 <div class="absolute left-1/2 w-0.5 h-full bg-gray-200"></div>
                 <div class="relative mb-8 flex justify-between items-center w-full">
                     <div class="w-5/12"></div>
-                    <div class="z-10 bg-[#4A908A] text-white rounded-full h-8 w-8 flex items-center justify-center">●</div>
+                    <div class="z-10 bg-gradient-to-br from-[#00A896] to-[#02C39A] text-white rounded-full h-8 w-8 flex items-center justify-center shadow-lg">●</div>
                     <div class="w-5/12 text-left pl-8">
-                        <p class="font-bold">UNFPA</p>
+                        <p class="font-bold text-[#3A506B]">UNFPA</p>
                         <p class="text-sm text-gray-600">2025 - Present</p>
                     </div>
                 </div>
                 <div class="relative mb-8 flex justify-between items-center w-full">
                     <div class="w-5/12 text-right pr-8">
-                        <p class="font-bold">GAIN</p>
+                        <p class="font-bold text-[#3A506B]">GAIN</p>
                         <p class="text-sm text-gray-600">2024 - 2025</p>
                     </div>
-                     <div class="z-10 bg-[#4A908A] text-white rounded-full h-8 w-8 flex items-center justify-center">●</div>
+                     <div class="z-10 bg-gradient-to-br from-[#00A896] to-[#02C39A] text-white rounded-full h-8 w-8 flex items-center justify-center shadow-lg">●</div>
                     <div class="w-5/12"></div>
                 </div>
                 <div class="relative mb-8 flex justify-between items-center w-full">
                     <div class="w-5/12"></div>
-                    <div class="z-10 bg-[#4A908A] text-white rounded-full h-8 w-8 flex items-center justify-center">●</div>
+                    <div class="z-10 bg-gradient-to-br from-[#00A896] to-[#02C39A] text-white rounded-full h-8 w-8 flex items-center justify-center shadow-lg">●</div>
                     <div class="w-5/12 text-left pl-8">
-                        <p class="font-bold">Swisscontact</p>
+                        <p class="font-bold text-[#3A506B]">Swisscontact</p>
                         <p class="text-sm text-gray-600">2021 - 2024</p>
                     </div>
                 </div>
                  <div class="relative mb-8 flex justify-between items-center w-full">
                     <div class="w-5/12 text-right pr-8">
-                        <p class="font-bold">B.Sc. in IT</p>
+                        <p class="font-bold text-[#3A506B]">B.Sc. in IT</p>
                         <p class="text-sm text-gray-600">2016 - 2020</p>
                     </div>
-                     <div class="z-10 bg-[#4A908A] text-white rounded-full h-8 w-8 flex items-center justify-center">●</div>
+                     <div class="z-10 bg-gradient-to-br from-[#00A896] to-[#02C39A] text-white rounded-full h-8 w-8 flex items-center justify-center shadow-lg">●</div>
                     <div class="w-5/12"></div>
                 </div>
             </div>
@@ -268,158 +275,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const cvData = {
-                summary: "Technology and evaluation specialist pioneering the integration of AI tools to optimize data analysis and innovation in international development. Five years' experience at UNFPA, GAIN, and Swisscontact, with strengths in scaling digital solutions and conducting complex mixed-methods evaluations. Developed and implemented a proprietary AI-assisted workflow using Gemini and NotebookLM to drastically enhance the efficiency and rigor of evidence generation, from data synthesis to reporting.",
-                experience: [
-                    {
-                        organization: "UNFPA",
-                        title: "National Young & Emerging Evaluator",
-                        points: [
-                            "Built a pioneering AI-assisted analytical workflow (NotebookLM & Gemini) to process over 300 program documents and 160 stakeholder interviews, enhancing the rigor of the 10th Country Programme Evaluation.",
-                            "Authored core chapters on Findings, Conclusions, and Recommendations for the Final Evaluation Report, directly influencing strategic planning.",
-                            "Producing interactive Power BI dashboards to translate complex evaluation data into actionable insights for high-level management.",
-                            "Led team training on AI tools for qualitative analysis, boosting team productivity and technical capacity."
-                        ]
-                    },
-                    {
-                        organization: "Swisscontact",
-                        title: "Officer, Partnership & Innovation",
-                        points: [
-                            "Led the product lifecycle for Bangladesh’s first open-source, mobile-optimized Moodle LMS for community paramedics, serving over 30,000 users.",
-                            "Scaled the e-learning system to train over 1,350 paramedics (60% women), improving healthcare access for more than 185,000 people.",
-                            "Built strategic coalitions across public and private sectors to ensure the long-term sustainability and market integration of the e-learning ecosystem."
-                        ]
-                    }
-                ],
-                skills: "AI & Data Tools: NotebookLM, Gemini Advanced, Prompt Engineering, Power BI. Development & PM Tools: Moodle LMS, H5P, Asana, Trello."
-            };
-
-            const generateSnippetBtn = document.getElementById('generateSnippetBtn');
-            const jobDescriptionInput = document.getElementById('jobDescription');
-            const jobDescriptionError = document.getElementById('jobDescriptionError');
-            const snippetResultDiv = document.getElementById('snippetResult');
-            const generatedTextP = document.getElementById('generatedText');
-            const copySnippetBtn = document.getElementById('copySnippetBtn');
-
-            generateSnippetBtn.addEventListener('click', async () => {
-                const jobDescription = jobDescriptionInput.value.trim();
-                
-                jobDescriptionInput.classList.remove('border-red-500');
-                jobDescriptionError.classList.add('hidden');
-
-                if (!jobDescription) {
-                    jobDescriptionInput.classList.add('border-red-500');
-                    jobDescriptionError.classList.remove('hidden');
-                    return;
-                }
-
-                generateSnippetBtn.disabled = true;
-                generateSnippetBtn.textContent = 'Generating...';
-                snippetResultDiv.classList.remove('hidden');
-                generatedTextP.textContent = 'Analyzing job description and crafting response...';
-                copySnippetBtn.classList.add('hidden');
-
-                const systemPrompt = "You are a world-class career assistant. Your task is to write a concise, impactful paragraph for a cover letter. You will be given Rafi Jahin's professional summary, key experiences, and skills, along with a job description. Your goal is to connect specific, quantifiable achievements and skills from Rafi's background directly to the requirements in the job description. Do not invent new skills. Use a professional, confident tone and start the paragraph directly, without any introductory phrases like 'Here is a paragraph...'";
-                
-                const userQuery = `Here is Rafi Jahin's professional context:
-                Summary: ${cvData.summary}
-                Key Experience: 
-                - At UNFPA: ${cvData.experience[0].points.join(' ')}
-                - At Swisscontact: ${cvData.experience[1].points.join(' ')}
-                Skills: ${cvData.skills}
-
-                Here is the target job description:
-                "${jobDescription}"
-
-                Now, write one strong paragraph for a cover letter that links his experience directly to this job's requirements.`;
-
-                try {
-                    const generatedText = await callGeminiAPI(systemPrompt, userQuery);
-                    generatedTextP.textContent = generatedText;
-                    copySnippetBtn.classList.remove('hidden');
-                } catch (error) {
-                    generatedTextP.textContent = 'Sorry, an error occurred while generating the text. Please try again.';
-                    console.error('Gemini API call failed:', error.message);
-                } finally {
-                    generateSnippetBtn.disabled = false;
-                    generateSnippetBtn.innerHTML = 'Generate Cover Letter Snippet ✨';
-                }
-            });
-            
-            copySnippetBtn.addEventListener('click', () => {
-                const tempTextarea = document.createElement('textarea');
-                tempTextarea.value = generatedTextP.textContent;
-                document.body.appendChild(tempTextarea);
-                tempTextarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(tempTextarea);
-                copySnippetBtn.textContent = 'Copied!';
-                setTimeout(() => {
-                    copySnippetBtn.textContent = 'Copy to Clipboard';
-                }, 2000);
-            });
-
-            async function callGeminiAPI(systemPrompt, userQuery, retries = 3, delay = 1000) {
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                
-                const payload = {
-                    contents: [{ parts: [{ text: userQuery }] }],
-                    systemInstruction: {
-                        parts: [{ text: systemPrompt }]
-                    },
-                    safetySettings: [
-                        { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
-                        { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
-                        { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
-                        { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" },
-                    ],
-                };
-
-                for (let i = 0; i < retries; i++) {
-                    try {
-                        const response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-
-                        if (!response.ok) {
-                            const errorBody = await response.text();
-                            console.error(`HTTP error! status: ${response.status}`, errorBody);
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-
-                        const result = await response.json();
-                        
-                        if (result.candidates && result.candidates.length > 0) {
-                            const candidate = result.candidates[0];
-                            if (candidate.content && candidate.content.parts && candidate.content.parts.length > 0 && candidate.content.parts[0].text) {
-                                return candidate.content.parts[0].text;
-                            } else {
-                                console.error('API response candidate missing content.', candidate);
-                                throw new Error(`API returned a candidate with no text content. Finish reason: ${candidate.finishReason || 'N/A'}`);
-                            }
-                        } else {
-                            console.error('API response contained no candidates.', result);
-                            let errorMessage = 'The model did not generate a response.';
-                            if (result.promptFeedback && result.promptFeedback.blockReason) {
-                                errorMessage += ` Reason: ${result.promptFeedback.blockReason}`;
-                            }
-                             throw new Error(errorMessage);
-                        }
-
-                    } catch (error) {
-                        console.error(`API call attempt ${i + 1} failed.`, error);
-                        if (i === retries - 1) {
-                           throw error; 
-                        }
-                        await new Promise(res => setTimeout(res, delay * Math.pow(2, i)));
-                    }
-                }
-                 throw new Error('API call failed after multiple retries.');
-            }
-
             const tabs = document.querySelectorAll('.tab');
             const tabPanes = document.querySelectorAll('.tab-pane');
 
@@ -447,12 +302,12 @@
                     datasets: [{
                         label: 'Skill Level',
                         data: [5, 5, 5, 5, 5, 5],
-                        backgroundColor: 'rgba(74, 144, 138, 0.2)',
-                        borderColor: 'rgba(74, 144, 138, 1)',
-                        pointBackgroundColor: 'rgba(74, 144, 138, 1)',
+                        backgroundColor: 'rgba(0, 168, 150, 0.2)',
+                        borderColor: 'rgba(2, 195, 154, 1)',
+                        pointBackgroundColor: 'rgba(2, 195, 154, 1)',
                         pointBorderColor: '#fff',
                         pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgba(74, 144, 138, 1)'
+                        pointHoverBorderColor: 'rgba(2, 195, 154, 1)'
                     }]
                 },
                 options: {
@@ -460,20 +315,20 @@
                     scales: {
                         r: {
                             angleLines: {
-                                color: 'rgba(0, 0, 0, 0.1)'
+                                color: 'rgba(58, 80, 107, 0.2)'
                             },
                             grid: {
-                                color: 'rgba(0, 0, 0, 0.1)'
+                                color: 'rgba(58, 80, 107, 0.2)'
                             },
                             pointLabels: {
                                 font: {
                                     size: 14,
                                 },
-                                color: '#383838'
+                                color: '#3A506B'
                             },
                             ticks: {
-                                backdropColor: '#FDFBF8',
-                                color: '#777',
+                                backdropColor: '#FFFBF5',
+                                color: '#3A506B',
                                 stepSize: 1,
                                 max: 5,
                                 min: 0
