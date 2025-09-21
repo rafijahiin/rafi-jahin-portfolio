@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Warm Neutrals & Muted Teal -->
-    <!-- Application Structure Plan: The SPA is a narrative journey starting with a "Key Metrics" dashboard. It flows into an "AI Career Assistant" powered by the Gemini API, an interactive "Experience" section, and a new "Publications & Media" section to showcase tangible work. It concludes with a "Skills" chart and "Career Timeline". This structure provides a comprehensive, interactive, and evidence-based view of the candidate's profile. -->
+    <!-- Application Structure Plan: The SPA is a narrative journey starting with a "Key Metrics" dashboard. It flows into an "AI Career Assistant" powered by the Gemini API, an interactive "Experience" section, and an expanded "Publications & Media" section. It concludes with a "Skills" chart and "Career Timeline". This structure provides a comprehensive, interactive, and evidence-based view of the candidate's profile. -->
     <!-- Visualization & Content Choices: 
         - Key Metrics (From CV achievements): Goal: Inform/Impress -> Method: Large number cards -> Interaction: Hover effects -> Justification: Highlights quantifiable impact upfront.
         - Experience (CV work history): Goal: Organize/Inform -> Method: JS-powered Tabs -> Interaction: Click to reveal role details -> Justification: Prevents a wall of text and improves navigation.
@@ -64,7 +64,7 @@
             <div class="mt-4 flex justify-center space-x-6 text-sm">
                 <a href="mailto:rafijahinn@gmail.com" class="text-gray-500 hover:text-[#4A908A] transition-colors">rafijahinn@gmail.com</a>
                 <a href="https://sites.google.com/view/rafi-jahin/" target="_blank" class="text-gray-500 hover:text-[#4A908A] transition-colors">Portfolio</a>
-                <a href="#" class="text-gray-500 hover:text-[#4A908A] transition-colors">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/rafi-jahin/" target="_blank" class="text-gray-500 hover:text-[#4A908A] transition-colors">LinkedIn</a>
             </div>
         </header>
 
@@ -99,7 +99,8 @@
                 <p class="mt-2 text-gray-600">Paste a job description below to see how my experience aligns. This tool uses the Gemini API to generate a targeted cover letter snippet.</p>
             </div>
             <div class="max-w-3xl mx-auto">
-                <textarea id="jobDescription" class="w-full h-40 p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#4A908A] focus:border-transparent transition-shadow" placeholder="Paste the job description here..."></textarea>
+                <textarea id="jobDescription" class="w-full h-40 p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#4A908A] focus:border-transparent transition" placeholder="Paste the job description here..."></textarea>
+                <p id="jobDescriptionError" class="text-red-500 text-sm mt-1 hidden">Please paste a job description first.</p>
                 <button id="generateSnippetBtn" class="mt-4 w-full bg-[#4A908A] text-white font-bold py-3 px-4 rounded-md hover:bg-[#3E7A73] transition-colors disabled:bg-gray-400">
                     Generate Cover Letter Snippet ✨
                 </button>
@@ -165,18 +166,63 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
                     <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Can AI be a game-changer for Bangladesh's development story?</h3>
-                    <p class="text-sm text-gray-600 mb-4 flex-grow">An op-ed on the potential of artificial intelligence to accelerate development in Bangladesh, focusing on practical applications and ethical considerations.</p>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">An op-ed on the potential of AI to accelerate development in Bangladesh, focusing on practical applications and ethical considerations.</p>
                     <a href="https://www.dhakatribune.com/opinion/op-ed/334207/can-ai-be-a-game-changer-for-bangladesh-s" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
                 </div>
                 <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
                     <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">From the Margins to the Mainstream</h3>
-                    <p class="text-sm text-gray-600 mb-4 flex-grow">A personal narrative on navigating gender transition in Bangladesh and the role of technology in fostering inclusion and creating opportunities.</p>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">A personal narrative on navigating gender transition and the role of technology in fostering inclusion and creating opportunities.</p>
                     <a href="https://www.thedailystar.net/shout/news/the-margins-the-mainstream-3183531" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
                 </div>
                 <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Youth-led Digital Solution to Fight COVID-19 in Bangladesh</h3>
-                    <p class="text-sm text-gray-600 mb-4 flex-grow">Details a project where a youth-led team developed a digital platform to provide reliable information and resources during the COVID-19 pandemic.</p>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Youth-led Digital Solution to Fight COVID-19</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">Details a project where a youth-led team developed a digital platform to provide reliable information and resources during the pandemic.</p>
                     <a href="https://www.swisscontact.org/en/news/youth-led-digital-solution-to-fight-covid-19-in-bangladesh" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                </div>
+                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Astha: A digital solution for women’s health</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">Highlighting the 'Astha' project, a digital platform designed to improve access to healthcare information and services for women.</p>
+                    <a href="https://www.swisscontact.org/en/news/astha-a-digital-solution-for-womens-health" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                </div>
+                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Blended learning model for community paramedics</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">An overview of the innovative blended learning model developed for paramedic training, combining digital and in-person instruction.</p>
+                    <a href="https://www.swisscontact.org/en/news/blended-learning-model-for-community-paramedics" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                </div>
+                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Bangladesh’s first open-source e-learning platform</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">The story behind the launch of the country's first open-source e-learning platform, aimed at democratizing vocational training.</p>
+                    <a href="https://www.swisscontact.org/en/news/bangladeshs-first-open-source-e-learning-platform" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                </div>
+                 <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Job fair connects paramedics with employers</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">An article covering a job fair in Sylhet organized to connect trained community paramedics with potential healthcare employers.</p>
+                    <a href="https://www.swisscontact.org/en/news/job-fair-in-sylhet-connects-community-paramedics-with-employers" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                </div>
+                <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">e-Learning in Paramedic Education (Video)</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">A video feature showcasing the impact and implementation of the e-learning platform for community paramedic training in Bangladesh.</p>
+                    <a href="https://www.youtube.com/watch?v=4ZvAVU-j8W8" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Watch Video →</a>
+                </div>
+                 <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Healthcare Career Fair in Rangpur (Video)</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">Video covering a career fair for healthcare workers in Rangpur, organized with 20 healthcare-providing organizations.</p>
+                    <a href="https://www.facebook.com/shomvobBD/videos/%E0%A7%A8%E0%A7%A6-%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A7%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%80-%E0%A6%B8%E0%A6%82%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%BE-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A7%87-%E0%A6%86%E0%A7%9F%E0%A7%8B%E0%A6%9C%E0%A6%BF%E0%A6%A4-%E0%A6%B0%E0%A6%82%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%95%E0%A6%B0%E0%A7%8D%E0%A6%AE%E0%A7%80%E0%A6%B0-%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A7%9F%E0%A6%BE%E0%A6%B0-%E0%A6%AE%E0%A7%87%E0%A6%B2%E0%A6%BE/1530961021139389/" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Watch Video →</a>
+                </div>
+                 <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Community Paramedic training now digitized</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">An article on the digitization of the CP training curriculum, making it more interactive and accessible for students nationwide.</p>
+                    <a href="https://www.swisscontact.org/en/news/the-community-paramedic-cp-training-is-now-interactively-digitized" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                </div>
+                 <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Teachers trained on e-learning platform Astha</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">News about a training session for teachers to effectively use the Astha e-learning platform for their students.</p>
+                    <a href="https://www.swisscontact.org/en/news/teachers-receive-training-on-e-learning-platform-astha" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
+                </div>
+                 <div class="publication-card bg-white/60 p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">Astha takes e-learning to the next level</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">An update on the advancements of the Astha platform, enhancing its interactive features for a better learning experience.</p>
+                    <a href="https://www.swisscontact.org/en/news/astha-takes-interactive-e-learning-to-its-next-level" target="_blank" class="text-[#4A908A] font-semibold hover:underline self-start">Read More →</a>
                 </div>
             </div>
         </section>
@@ -270,14 +316,20 @@
 
             const generateSnippetBtn = document.getElementById('generateSnippetBtn');
             const jobDescriptionInput = document.getElementById('jobDescription');
+            const jobDescriptionError = document.getElementById('jobDescriptionError');
             const snippetResultDiv = document.getElementById('snippetResult');
             const generatedTextP = document.getElementById('generatedText');
             const copySnippetBtn = document.getElementById('copySnippetBtn');
 
             generateSnippetBtn.addEventListener('click', async () => {
                 const jobDescription = jobDescriptionInput.value.trim();
+                
+                jobDescriptionInput.classList.remove('border-red-500');
+                jobDescriptionError.classList.add('hidden');
+
                 if (!jobDescription) {
-                    alert('Please paste a job description first.');
+                    jobDescriptionInput.classList.add('border-red-500');
+                    jobDescriptionError.classList.remove('hidden');
                     return;
                 }
 
